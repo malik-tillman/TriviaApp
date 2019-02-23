@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout android:id="@+id/sliding_up_panel"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:background="@color/colorPrimaryLight"
+    app:umanoShadowHeight="5dp"
+    app:umanoPanelHeight="30dp">
+
+    <!--Main Content-->
+    <androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Actual Main Content-->
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/weathers_gradient_list">
+
+            <TextView android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="@string/title"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <fragment
+                android:id="@+id/modes_fragment"
+                android:name="com.tillman.malik.triviaworldtour.Modes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintVertical_bias="0.404" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Setting Drawer-->
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/drawer_content"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/colorPrimaryDark">
+
+            <androidx.viewpager.widget.ViewPager android:id="@+id/viewPager"
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"/>
+
+            <com.google.android.material.tabs.TabLayout android:id="@+id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <!--Play Fragment-->
+    <LinearLayout android:id="@+id/play_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment android:name="com.tillman.malik.triviaworldtour.Questions"
+            android:id="@+id/fragment_play"
+            android:gravity="center|top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

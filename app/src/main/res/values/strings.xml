@@ -1,0 +1,57 @@
+<resources>
+    <!--Generic Strings-->
+    <string name="app_name">TriviaWorldTour</string>
+    <string name="no_data">N/A</string>
+    <string name="handle_placeholder">Handle</string>
+    <string name="place_answer">TEST</string>
+    <string name="title">WORLD GUESSING GAME</string>
+    <string name="preference_file_key">com.tillman.malik.triviaworldtour.PREFERENCE_FILE_KEY</string>
+
+    <!--Play Strings-->
+    <string name="play_title">Play</string>
+    <string name="loading_question">Loading Questions</string>
+
+    <!--Question Strings-->
+    <string name="question_placeholder">Error loading question</string>
+    <string name="question_left_ph">0 Left</string>
+    <string name="question_correct_ph">0/0 Correct</string>
+
+    <!--Settings Strings-->
+    <string name="settings_title">Settings</string>
+    <string name="handle_setting">Settings</string>
+    <string name="volume_title">Volume</string>
+    <string name="sfx_title">SFX</string>
+    <string name="music_title">Music</string>
+    <string name="master_title">Master</string>
+
+    <!--Modes Strings-->
+    <string name="game_mode_title">Choose a Game Mode</string>
+    <string name="weather_summary">Answer questions about various city weathers!</string>
+    <string name="population_summary">Answer population questions about your favorite countries and continents!</string>
+    <string name="impending_summary">This game mode is coming real soon. We\'re Working On It</string>
+    <string name="weathers">City Weathers</string>
+    <string name="conditions">Conditions</string>
+    <string name="populations">Populations</string>
+    <string name="capitals">Capitals</string>
+    <string name="blitz">Blitz</string>
+    <string name="rush">Rush</string>
+    <string name="weathers_header">Guess The Temp</string>
+    <string name="populations_header">Population Ponder</string>
+    <string name="impending_header">History</string>
+
+    <!--Stats Strings-->
+    <string name="stats_title">Statistics</string>
+    <string name="handle_stat">Statistics</string>
+    <string name="games_title">Game Stats</string>
+    <string name="questions_title">Question Stats</string>
+    <string name="points_title">Points Stats</string>
+    <string name="misc_title">Misc.</string>
+    <string name="games_played">Games Played: </string>
+    <string name="questions_answered">Questions Answered: </string>
+    <string name="correct_answers">Correct Answers: </string>
+    <string name="wrong_answers">Wrong Answers: </string>
+    <string name="top_score">Top Score: </string>
+    <string name="total_points">Total Points: </string>
+    <string name="about_hypertext"><u>About</u></string>
+    <string name="credits_hypertext"><u>Credits</u></string>
+</resources>

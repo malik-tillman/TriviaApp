@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Fonts-->
+    <dimen name="play_font">35sp</dimen>
+    <dimen name="title_font">30sp</dimen>
+    <dimen name="subtitle_font">13sp</dimen>
+    <dimen name="property_font">13sp</dimen>
+    <dimen name="value_font">12sp</dimen>
+    <dimen name="summary_font">20sp</dimen>
+    <dimen name="question_font">15sp</dimen>
+
+    <!--Margins-->
+    <dimen name="title_bottom">20dp</dimen>
+    <dimen name="title_top">10dp</dimen>
+    <dimen name="subtitle_margin_top">10dp</dimen>
+    <dimen name="element_margin_top">5dp</dimen>
+    <dimen name="element_margin_start">8dp</dimen>
+    <dimen name="element_margin_end">15dp</dimen>
+    <dimen name="modes_margin_top">20dp</dimen>
+    <dimen name="modes_content_margin_bottom">500dp</dimen>
+    <dimen name="modes_content_margin_all">8dp</dimen>
+    <dimen name="question_layout_marginStart">8dp</dimen>
+    <dimen name="question_layout_marginTop">50dp</dimen>
+    <dimen name="question_layout_marginEnd">8dp</dimen>
+    <dimen name="question_button_container_marginBottom">8dp</dimen>
+
+    <!--Padding-->
+    <dimen name="subtitle_padding">8dp</dimen>
+    <dimen name="summary_padding">8dp</dimen>
+    <dimen name="handle_padding_all">10dp</dimen>
+    <dimen name="handle_padding_end">10dp</dimen>
+    <dimen name="handle_padding_start">20dp</dimen>
+    <dimen name="question_layout_paddingStart">40dp</dimen>
+    <dimen name="question_layout_paddingTop">60dp</dimen>
+    <dimen name="question_layout_paddingEnd">40dp</dimen>
+    <dimen name="question_layout_paddingBottom">60dp</dimen>
+    <dimen name="question_button_paddingLeft">50dp</dimen>
+    <dimen name="question_button_paddingRight">50dp</dimen>
+
+    <!--Measurements-->
+    <dimen name="scrolview_height">195dp</dimen>
+    <!--Todo:Refactor for naming-->
+    <dimen name="button_width">200dp</dimen>
+    <dimen name="flip">180</dimen>
+    <dimen name="settings_handle_Y">179dp</dimen>
+    <dimen name="modes_handle_Y">79dp</dimen>
+    <dimen name="stats_handle_Y">-21dp</dimen>
+    <dimen name="fragment_height">400dp</dimen>
+    <dimen name="question_layout_width">350dp</dimen>
+    <dimen name="question_button_width">0dp</dimen>
+
+
+</resources>

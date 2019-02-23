@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <!--Update stats by setting value of TextView R.id.<stat>_holder-->
+    <LinearLayout android:id="@+id/stats_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView android:id="@+id/stats_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/title_bottom"
+            android:layout_marginTop="@dimen/title_top"
+            android:text="@string/stats_title"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="@dimen/title_font"
+            android:theme="@style/Animation.AppCompat.Dialog"/>
+
+        <TextView android:id="@+id/games_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/subtitle_padding"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/games_title"
+            android:textSize="@dimen/subtitle_font"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/games_played_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_margin_top"
+            android:layout_marginStart="@dimen/element_margin_start"
+            android:layout_marginEnd="@dimen/element_margin_end"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/games_played"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/games_played"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/property_font"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView android:id="@+id/games_played_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/value_font"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView android:id="@+id/questions_subtitle"
+            android:text="@string/questions_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subtitle_margin_top"
+            android:padding="@dimen/subtitle_padding"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/subtitle_font"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/questions_answered_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_margin_top"
+            android:layout_marginStart="@dimen/element_margin_start"
+            android:layout_marginEnd="@dimen/element_margin_end">
+
+            <TextView android:id="@+id/questions_answered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questions_answered"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/property_font"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView android:id="@+id/questions_answered_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/value_font"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/correct_answers_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_margin_top"
+            android:layout_marginStart="@dimen/element_margin_start"
+            android:layout_marginEnd="@dimen/element_margin_end">
+
+            <TextView android:id="@+id/correct_answers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/correct_answers"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/property_font"/>
+
+            <TextView android:id="@+id/correct_answers_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/value_font"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/wrong_answers_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_margin_top"
+            android:layout_marginStart="@dimen/element_margin_start"
+            android:layout_marginEnd="@dimen/element_margin_end">
+
+            <TextView android:id="@+id/wrong_answers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wrong_answers"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/property_font"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView android:id="@+id/wrong_answers_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/value_font"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView android:id="@+id/points_subtitle"
+            android:text="@string/points_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subtitle_margin_top"
+            android:padding="@dimen/subtitle_padding"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/subtitle_font"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/top_score_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_margin_top"
+            android:layout_marginStart="@dimen/element_margin_start"
+            android:layout_marginEnd="@dimen/element_margin_end">
+
+            <TextView android:id="@+id/top_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/top_score"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/property_font"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView android:id="@+id/top_score_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/value_font"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/points_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/element_margin_top"
+            android:layout_marginStart="@dimen/element_margin_start"
+            android:layout_marginEnd="@dimen/element_margin_end">
+
+            <TextView android:id="@+id/points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_points"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/property_font"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView android:id="@+id/points_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_data"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/value_font"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/next_container"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/gotoModes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="modes"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/gotoSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="setings"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button android:id="@+id/reset_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

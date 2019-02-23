@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout android:id="@+id/modesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <TextView android:id="@+id/modes_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/game_mode_title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical">
+
+            <com.airbnb.lottie.LottieAnimationView android:id="@+id/left_nav"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:rotation="180"
+                app:lottie_rawRes="@raw/navigator"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
+
+            <RelativeLayout android:id="@+id/gifViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <com.tillman.malik.triviaworldtour.GifImageView android:id="@+id/weatherGif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+
+                <com.tillman.malik.triviaworldtour.GifImageView android:id="@+id/populationsGif"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+
+                <com.tillman.malik.triviaworldtour.GifImageView android:id="@+id/impendingGif"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+            <com.airbnb.lottie.LottieAnimationView android:id="@+id/right_nav"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:lottie_rawRes="@raw/navigator"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
+
+        </LinearLayout>
+
+        <TextView android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weathers_header"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"/>
+
+        <TextView android:id="@+id/mode_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingStart="40sp"
+            android:paddingEnd="40sp"
+            android:gravity="center"
+            android:text="@string/weather_summary"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

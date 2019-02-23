@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryLight">#d2dfff</color>
+    <color name="colorPrimaryDark">#252525</color>
+    <color name="colorAccent">#fff4f3</color>
+    <color name="coming_soon">#784d4d4d</color>
+    <color name="coming_soon_text">#6d686868</color>
+    <color name="focus_shadow">#83ffffff</color>
+    <color name="answerFont">#66667f</color>
+    <color name="mode_selected">#FF530D</color>
+</resources>

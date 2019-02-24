@@ -34,6 +34,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!--Test Comment-->
             <com.tillman.malik.triviaworldtour.GifImageView android:id="@+id/welcome_gif"
                 android:layout_width="5dp"
                 android:layout_height="5dp"

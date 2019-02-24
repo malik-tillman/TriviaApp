@@ -40,7 +40,6 @@ public class GifImageView extends View {
         }
     }
 //-------------------------------------Constructors-------------------------------------------------
-
     private void init() {
         setFocusable(true);
         mMovie = Movie.decodeStream(mInputStream);

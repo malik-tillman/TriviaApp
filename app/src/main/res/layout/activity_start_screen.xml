@@ -24,7 +24,7 @@
             <TextView android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="@string/title"
@@ -34,21 +34,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.tillman.malik.triviaworldtour.GifImageView
-                android:id="@+id/welcome_gif"
+            <com.tillman.malik.triviaworldtour.GifImageView android:id="@+id/welcome_gif"
                 android:layout_width="5dp"
                 android:layout_height="5dp"
                 android:scaleType="fitXY"
-                android:background="@drawable/thinking"
-                app:layout_constraintTop_toBottomOf="@id/title"/>
+                android:layout_marginTop="35dp"
+                android:background="@drawable/thinking_2"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <fragment
-                android:id="@+id/modes_fragment"
+            <fragment android:id="@+id/modes_fragment"
                 android:name="com.tillman.malik.triviaworldtour.Modes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="50dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintEnd_toEndOf="parent"

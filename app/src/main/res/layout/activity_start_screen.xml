@@ -19,31 +19,56 @@
         <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/main_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="40dp"
+            android:paddingBottom="40dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
             android:background="@drawable/weathers_gradient_list">
 
-            <TextView android:id="@+id/title"
+            <ImageView android:id="@+id/content_panel_bg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:text="@string/title"
-                android:textSize="30sp"
-                android:textColor="@android:color/white"
+                android:src="@drawable/weather_bg"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:adjustViewBounds="true"/>
 
-            <!--Test Comment-->
-            <com.tillman.malik.triviaworldtour.GifImageView android:id="@+id/welcome_gif"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
-                android:scaleType="fitXY"
-                android:layout_marginTop="35dp"
-                android:background="@drawable/thinking_2"
-                app:layout_constraintTop_toBottomOf="@id/title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+            <LinearLayout android:id="@+id/title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
+                android:orientation="horizontal"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintEnd_toEndOf="@+id/content_panel_bg"
+                app:layout_constraintStart_toStartOf="@+id/content_panel_bg"
+                app:layout_constraintTop_toTopOf="@+id/content_panel_bg"
+                app:layout_constraintBottom_toBottomOf="@id/content_panel_bg">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/title"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Test Comment-->
+                <ImageView
+                    android:id="@+id/welcome_gif"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/title"
+                    app:layout_constraintStart_toEndOf="@+id/title"
+                    app:layout_constraintTop_toTopOf="@+id/title" />
+
+            </LinearLayout>
 
             <fragment android:id="@+id/modes_fragment"
                 android:name="com.tillman.malik.triviaworldtour.Modes"
@@ -51,10 +76,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/welcome_gif"/>
+                app:layout_constraintTop_toBottomOf="@+id/title_container" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

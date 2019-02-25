@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -103,7 +104,11 @@ public class StartScreen extends AppCompatActivity {
         TextView title = findViewById(R.id.title);
         title.setTypeface(GROBOLD);
 
-
+        /*Welcome Gif Implementation with Glide*/
+        ImageView welcomeGif = findViewById(R.id.welcome_gif);
+        Glide.with(this)
+                .load(getResources().getIdentifier("thinking_2", "drawable", this.getPackageName()))
+                .into(welcomeGif);
     }
 
     /**

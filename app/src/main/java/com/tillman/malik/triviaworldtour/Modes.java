@@ -2,25 +2,29 @@ package com.tillman.malik.triviaworldtour;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.bumptech.glide.Glide;
 
 @SuppressLint("ClickableViewAccessibility")
 public class Modes extends Fragment {
     View rootView;
 
     /*Gif View for Our Animated Views*/
-    GifImageView weatherGif, populationsGif, impendingGif;
+    ImageView gifView;
     LottieAnimationView leftNav, rightNav;
 
     /*Gif List Position*/
@@ -45,6 +49,7 @@ public class Modes extends Fragment {
     private void initiate() {
         /*Get Screen Width*/
         DisplayMetrics displayMetrics = new DisplayMetrics();
+        float scaleFactor = .7f;
         getActivity()
                 .getWindowManager()
                 .getDefaultDisplay()
@@ -52,20 +57,19 @@ public class Modes extends Fragment {
         dWidth = displayMetrics.widthPixels;
 
         /*Set Gifs*/
-        weatherGif = rootView.findViewById(R.id.weatherGif);
-        populationsGif = rootView.findViewById(R.id.populationsGif);
-        impendingGif = rootView.findViewById(R.id.impendingGif);
+        gifView = rootView.findViewById(R.id.modesGif);
 
-        if (dWidth == 1440) {
-            weatherGif.setGifImageResource(R.drawable.weathers_1000);
-            populationsGif.setGifImageResource(R.drawable.populations_1000);
-            impendingGif.setGifImageResource(R.drawable.impending_1000);
-        }
-        else {
-            weatherGif.setGifImageResource(R.drawable.weathers_500);
-            populationsGif.setGifImageResource(R.drawable.populations_500);
-            impendingGif.setGifImageResource(R.drawable.impending_500);
-        }
+
+        if (dWidth >= 1440)
+            Glide.with(getActivity())
+                    .load(getResources().getIdentifier("weathers_1000", "drawable", getActivity().getPackageName()))
+                    .into(gifView);
+
+        else
+            Glide.with(getActivity())
+                    .load(getResources().getIdentifier("weathers_500", "drawable", getActivity().getPackageName()))
+                    .into(gifView);
+
 
         /*Set Navigators*/
         leftNav = rootView.findViewById(R.id.left_nav);
@@ -80,6 +84,23 @@ public class Modes extends Fragment {
         title.setTypeface(StartScreen.getFont(getContext(), "janda"));
         header.setTypeface(StartScreen.getFont(getContext(), "janda"));
         summary.setTypeface(StartScreen.getFont(getContext(), "janda"));
+
+        /*Size Down Some Elements for Smaller Screens*/
+        if (dWidth <= 720) {
+            /*Set Text Sizes*/
+            summary.setTextSize(
+                    TypedValue.COMPLEX_UNIT_SP,
+                    (summary.getTextSize()*.4f)
+            );
+
+            /*Set Gif Scale*/
+            dfdf
+            gifView.setScaleX(scaleFactor);
+            gifView.setScaleY(scaleFactor);
+
+        }
+
+
     }
 
     /**
@@ -166,9 +187,16 @@ public class Modes extends Fragment {
                 switch (gifPos) {
                     case 0: /*Weather <- Population*/
                         /*Set Gif*/
-                        populationsGif.setVisibility(View.GONE);
-                        weatherGif.setVisibility(View.VISIBLE);
-                        weatherGif.bringToFront();
+                        if (dWidth >= 1440) {
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("weathers_1000", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
+                        else{
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("weathers_500", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
 
                         /*Set Mode*/
                         StartScreen.setMode(getContext(), StartScreen.WEATHERS);
@@ -181,9 +209,17 @@ public class Modes extends Fragment {
 
                         break;
                     case 1: /*Population <- Impending*/
-                        impendingGif.setVisibility(View.GONE);
-                        populationsGif.setVisibility(View.VISIBLE);
-                        populationsGif.bringToFront();
+                        /*Set Gif*/
+                        if (dWidth >= 1440) {
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("populations_1000", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
+                        else{
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("populations_500", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
 
                         /*Set Mode*/
                         StartScreen.setMode(getContext(), StartScreen.POPULATIONS);
@@ -211,9 +247,17 @@ public class Modes extends Fragment {
                     case 0: /*Weather*/
                         break;
                     case 1: /*Population <- Weather*/
-                        weatherGif.setVisibility(View.GONE);
-                        populationsGif.setVisibility(View.VISIBLE);
-                        populationsGif.bringToFront();
+                        /*Set Gif*/
+                        if (dWidth >= 1440) {
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("populations_1000", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
+                        else{
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("populations_500", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
 
                         /*Set Mode*/
                         StartScreen.setMode(getContext(), StartScreen.POPULATIONS);
@@ -226,9 +270,17 @@ public class Modes extends Fragment {
 
                         break;
                     case 2: /*History <- Population*/
-                        populationsGif.setVisibility(View.GONE);
-                        impendingGif.setVisibility(View.VISIBLE);
-                        impendingGif.bringToFront();
+                        /*Set Gif*/
+                        if (dWidth >= 1440) {
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("impending_1000", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
+                        else{
+                            Glide.with(getActivity())
+                                    .load(getResources().getIdentifier("impending_500", "drawable", getActivity().getPackageName()))
+                                    .into(gifView);
+                        }
 
                         /*Set Mode*/
                         StartScreen.setMode(getContext(), StartScreen.IMPENDING);

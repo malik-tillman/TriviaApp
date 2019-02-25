@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -94,10 +95,9 @@ public class Modes extends Fragment {
             );
 
             /*Set Gif Scale*/
-            dfdf
-            gifView.setScaleX(scaleFactor);
-            gifView.setScaleY(scaleFactor);
-
+            gifView.setLayoutParams(
+                     new LinearLayout.LayoutParams(250,250)
+            );
         }
 
 

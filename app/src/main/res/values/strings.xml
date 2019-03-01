@@ -25,9 +25,9 @@
     <string name="master_title">Master</string>
 
     <!--Modes Strings-->
-    <string name="game_mode_title">Choose a Game Mode</string>
+    <string name="header">Choose a Game Mode</string>
     <string name="weather_summary">Answer questions about various city weathers!</string>
-    <string name="population_summary">Answer population questions about your favorite countries and continents!</string>
+    <string name="population_summary">Answer population questions about your favorite countries!</string>
     <string name="impending_summary">This game mode is coming real soon. We\'re Working On It</string>
     <string name="weathers">City Weathers</string>
     <string name="conditions">Conditions</string>
@@ -35,9 +35,10 @@
     <string name="capitals">Capitals</string>
     <string name="blitz">Blitz</string>
     <string name="rush">Rush</string>
-    <string name="weathers_header">Guess The Temp</string>
-    <string name="populations_header">Population Ponder</string>
-    <string name="impending_header">History</string>
+    <string name="weathers_title">Guess The Temp</string>
+    <string name="populations_title">Population Ponder</string>
+    <string name="impending_title">History</string>
+    <string name="impending_header">Not Done Yet</string>
 
     <!--Stats Strings-->
     <string name="stats_title">Statistics</string>

@@ -7,40 +7,67 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"/>
-
     <LinearLayout android:id="@+id/modesView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 
-        <TextView android:id="@+id/modes_title"
+        <TextView android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textColor="@color/weathers_title"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView android:id="@+id/header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/game_mode_title"
-            android:textColor="@android:color/white"
+            android:text="@string/header"
+            android:textColor="@color/weathers_header"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+        <LinearLayout android:id="@+id/animation_view"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical">
 
-            <com.airbnb.lottie.LottieAnimationView android:id="@+id/left_nav"
+            <RelativeLayout android:id="@+id/left_navigation_container"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:rotation="180"
-                app:lottie_rawRes="@raw/navigator"
-                app:lottie_loop="true"
-                app:lottie_autoPlay="true"/>
+                android:visibility="invisible">
+
+                <com.airbnb.lottie.LottieAnimationView android:id="@+id/left_weather_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/weather_navigator"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"/>
+
+                <com.airbnb.lottie.LottieAnimationView android:id="@+id/left_population_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/populations_navigator"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    android:visibility="invisible"/>
+
+                <com.airbnb.lottie.LottieAnimationView android:id="@+id/left_impending_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/impending_navigator"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
 
             <ImageView android:id="@+id/modesGif"
                 android:layout_width="200dp"
@@ -49,21 +76,43 @@
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"/>
 
-            <com.airbnb.lottie.LottieAnimationView android:id="@+id/right_nav"
+            <RelativeLayout android:id="@+id/right_navigation_container"
                 android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:lottie_rawRes="@raw/navigator"
-                app:lottie_loop="true"
-                app:lottie_autoPlay="true"/>
+                android:layout_height="50dp">
+
+                <com.airbnb.lottie.LottieAnimationView android:id="@+id/right_weather_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/weather_navigator"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"/>
+
+                <com.airbnb.lottie.LottieAnimationView android:id="@+id/right_population_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/populations_navigator"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    android:visibility="invisible"/>
+
+                <com.airbnb.lottie.LottieAnimationView android:id="@+id/right_impending_navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:lottie_rawRes="@raw/impending_navigator"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
-        <TextView android:id="@+id/header"
+        <TextView android:id="@+id/modes_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/weathers_header"
+            android:text="@string/weathers_title"
             android:layout_gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/weathers_mode_title"
             android:gravity="center"
             android:textSize="30sp"/>
 
@@ -72,10 +121,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/weathers_summary"
             android:gravity="center"
             android:text="@string/weather_summary"
-            android:textSize="25sp"/>
+            android:textSize="23sp"/>
 
     </LinearLayout>
 

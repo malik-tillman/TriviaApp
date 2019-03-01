@@ -25,60 +25,28 @@
             android:paddingStart="20dp"
             android:background="@drawable/weathers_gradient_list">
 
-            <ImageView android:id="@+id/content_panel_bg"
+            <ImageView android:id="@+id/modes_bg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/weather_bg"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:adjustViewBounds="true"/>
-
-            <LinearLayout android:id="@+id/title_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginStart="25dp"
-                android:orientation="horizontal"
-                app:layout_constraintVertical_bias="0"
-                app:layout_constraintEnd_toEndOf="@+id/content_panel_bg"
-                app:layout_constraintStart_toStartOf="@+id/content_panel_bg"
-                app:layout_constraintTop_toTopOf="@+id/content_panel_bg"
-                app:layout_constraintBottom_toBottomOf="@id/content_panel_bg">
-
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/title"
-                    android:textColor="@android:color/white"
-                    android:textSize="30sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <!--Test Comment-->
-                <ImageView
-                    android:id="@+id/welcome_gif"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_gravity="center"
-                    app:layout_constraintBottom_toBottomOf="@+id/title"
-                    app:layout_constraintStart_toEndOf="@+id/title"
-                    app:layout_constraintTop_toTopOf="@+id/title" />
-
-            </LinearLayout>
 
             <fragment android:id="@+id/modes_fragment"
                 android:name="com.tillman.malik.triviaworldtour.Modes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_container" />
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintEnd_toEndOf="@+id/modes_bg"
+                app:layout_constraintStart_toStartOf="@+id/modes_bg"
+                app:layout_constraintTop_toTopOf="@+id/modes_bg"
+                app:layout_constraintBottom_toBottomOf="@id/modes_bg"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

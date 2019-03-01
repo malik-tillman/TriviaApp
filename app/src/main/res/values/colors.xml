@@ -9,4 +9,27 @@
     <color name="focus_shadow">#83ffffff</color>
     <color name="answerFont">#66667f</color>
     <color name="mode_selected">#FF530D</color>
+
+    <!--Modes Font Colors-->
+    <!--Weather-->
+    <color name="weathers_title">#e1faff</color>
+    <color name="weathers_header">#ffffff</color>
+    <color name="weathers_mode_title">@color/weathers_title</color>
+    <color name="weathers_summary">#f8feff</color>
+    <!--Populations-->
+    <color name="populations_title">#7fc193</color>
+    <color name="populations_header">#6cb884</color>
+    <color name="populations_mode_title">@color/populations_title</color>
+    <color name="populations_summary">#89c19a</color>
+    <!--Impending-->
+    <color name="impending_title">#606060</color>
+    <color name="impending_header">#FF606060</color>
+    <color name="impending_mode_title">@color/impending_title</color>
+    <color name="impending_summary">#6b6b6b</color>
+
+    <!--Nav Colors-->
+    <color name="weather_nav">#E1FAFF</color>
+    <color name="populations_nav">#7FC193</color>
+    <color name="impending_nav">#606060</color>
+
 </resources>

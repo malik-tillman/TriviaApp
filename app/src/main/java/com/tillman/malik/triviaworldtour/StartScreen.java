@@ -41,6 +41,9 @@ public class StartScreen extends AppCompatActivity {
     /*We use this for the background gradient effect*/
     private static ConstraintLayout mainLayout;
 
+    /*Content Bg Changes onMode Changes*/
+    private static ImageView modeBGs;
+
     /*Total Questions to Generate*/
     final public static int total = 15;
 
@@ -80,6 +83,9 @@ public class StartScreen extends AppCompatActivity {
         mainLayout = findViewById(R.id.main_content);
         setMode(this, game_mode);
 
+        /*Contend Background*/
+        modeBGs = findViewById(R.id.modes_bg);
+
         /*Drawers*/
         DrawerLayout drawerLayout = findViewById(R.id.drawer);
         slidingUpPanelLayout = findViewById(R.id.sliding_up_panel);
@@ -99,16 +105,6 @@ public class StartScreen extends AppCompatActivity {
         JANDA = Typeface.createFromAsset(getAssets(), "fonts/janda.ttf");
         BEBAS = Typeface.createFromAsset(getAssets(), "fonts/bebas.ttf");
         HEAVITAS = Typeface.createFromAsset(getAssets(), "fonts/heavitas.ttf");
-
-        /*Set Fonts*/
-        TextView title = findViewById(R.id.title);
-        title.setTypeface(GROBOLD);
-
-        /*Welcome Gif Implementation with Glide*/
-        ImageView welcomeGif = findViewById(R.id.welcome_gif);
-        Glide.with(this)
-                .load(getResources().getIdentifier("thinking_2", "drawable", this.getPackageName()))
-                .into(welcomeGif);
     }
 
     /**
@@ -124,19 +120,24 @@ public class StartScreen extends AppCompatActivity {
         int fadeIn = 5000, fadeOut = 5000;
 
         /*Set Mode*/
+        int prevMode = game_mode;
         if(mode == IMPENDING) game_mode = POPULATIONS;
         else game_mode = mode;
 
         /*Set BG*/
         switch (mode){
             case WEATHERS:
-                mainLayout.setBackground(context.getDrawable(R.drawable.weathers_gradient_list));
-                animationDrawable = (AnimationDrawable) mainLayout.getBackground();
-                animationDrawable.setEnterFadeDuration(fadeIn);
-                animationDrawable.setExitFadeDuration(fadeOut);
-                animationDrawable.start();
+                if(mode!=prevMode){
+                    modeBGs.setImageDrawable(context.getDrawable(R.drawable.weather_bg));
+                    mainLayout.setBackground(context.getDrawable(R.drawable.weathers_gradient_list));
+                    animationDrawable = (AnimationDrawable) mainLayout.getBackground();
+                    animationDrawable.setEnterFadeDuration(fadeIn);
+                    animationDrawable.setExitFadeDuration(fadeOut);
+                    animationDrawable.start();
+                }
                 break;
             case POPULATIONS:
+                modeBGs.setImageDrawable(context.getDrawable(R.drawable.populations_bg));
                 mainLayout.setBackground(context.getDrawable(R.drawable.populations_gradient_list));
                 animationDrawable = (AnimationDrawable) mainLayout.getBackground();
                 animationDrawable.setEnterFadeDuration(fadeIn);
@@ -144,11 +145,14 @@ public class StartScreen extends AppCompatActivity {
                 animationDrawable.start();
                 break;
             case IMPENDING:
-                mainLayout.setBackground(context.getDrawable(R.drawable.impending_gradient_list));
-                animationDrawable = (AnimationDrawable) mainLayout.getBackground();
-                animationDrawable.setEnterFadeDuration(fadeIn);
-                animationDrawable.setExitFadeDuration(fadeOut);
-                animationDrawable.start();
+                if(mode!=prevMode){
+                    modeBGs.setImageDrawable(context.getDrawable(R.drawable.impending_bg));
+                    mainLayout.setBackground(context.getDrawable(R.drawable.impending_gradient_list));
+                    animationDrawable = (AnimationDrawable) mainLayout.getBackground();
+                    animationDrawable.setEnterFadeDuration(fadeIn);
+                    animationDrawable.setExitFadeDuration(fadeOut);
+                    animationDrawable.start();
+                }
         }
     }
 
@@ -204,6 +208,14 @@ public class StartScreen extends AppCompatActivity {
         });
     }
 
+    /**
+     * Get Font
+     * Here we return a desired custom font from our font repository.
+     *
+     * @param context:
+     * @param fontWanted: desired font
+     * @return Typeface of font desired
+     */
     public static Typeface getFont(Context context, String fontWanted){
         return Typeface.createFromAsset(context.getAssets(), "fonts/" + fontWanted + ".ttf");
     }

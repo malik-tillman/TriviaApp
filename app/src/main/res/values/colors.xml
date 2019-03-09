@@ -9,6 +9,7 @@
     <color name="focus_shadow">#83ffffff</color>
     <color name="answerFont">#66667f</color>
     <color name="mode_selected">#FF530D</color>
+    <color name="transparent">#00ffffff</color>
 
     <!--Modes Font Colors-->
     <!--Weather-->

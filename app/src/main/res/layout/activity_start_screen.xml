@@ -39,13 +39,22 @@
                 android:name="com.tillman.malik.triviaworldtour.Modes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 app:layout_constraintVertical_bias="0"
                 app:layout_constraintEnd_toEndOf="@+id/modes_bg"
                 app:layout_constraintStart_toStartOf="@+id/modes_bg"
                 app:layout_constraintTop_toTopOf="@+id/modes_bg"
+                app:layout_constraintBottom_toTopOf="@id/open_drawer"/>
+
+            <ImageButton android:id="@+id/open_drawer"
+                android:background="@color/transparent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/settings_icon"
+                app:layout_constraintEnd_toEndOf="@id/modes_bg"
+                app:layout_constraintStart_toStartOf="@id/modes_bg"
+                app:layout_constraintTop_toBottomOf="@id/modes_fragment"
                 app:layout_constraintBottom_toBottomOf="@id/modes_bg"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -56,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/colorPrimaryDark">
+            android:background="@drawable/drawer_bg">
 
             <androidx.viewpager.widget.ViewPager android:id="@+id/viewPager"
                 android:layout_width="wrap_content"

@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="@color/colorPrimaryDark">
+    android:background="@android:color/transparent">
 
     <!--Adjust volume by making calls to <scope>_seekbar progress listeners-->
     <TextView android:id="@+id/setting_tittle"

@@ -20,9 +20,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -87,8 +89,17 @@ public class StartScreen extends AppCompatActivity {
         modeBGs = findViewById(R.id.modes_bg);
 
         /*Drawers*/
-        DrawerLayout drawerLayout = findViewById(R.id.drawer);
+        final DrawerLayout drawerLayout = findViewById(R.id.drawer);
         slidingUpPanelLayout = findViewById(R.id.sliding_up_panel);
+
+        /*Set Setting Drawer Open*/
+        ImageButton open_drawer = findViewById(R.id.open_drawer);
+        open_drawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         /*Settings View Pager*/
         ViewPager mViewPager = findViewById(R.id.viewPager);
